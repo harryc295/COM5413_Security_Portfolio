@@ -1,1 +1,2 @@
- 
+ Task 1 
+ Ai was used for helping debug some regex patterns for linux logs, i checked all the logic against the modules requirments

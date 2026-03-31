@@ -1,0 +1,10 @@
+Apr 01 10:00:01 host-alpha sshd[123]: Invalid user admin from 192.168.1.15 port 55432 ssh2
+Apr 01 10:00:01 host-alpha sshd[123]: Failed password for invalid user admin from 192.168.1.15 port 55432 ssh2
+Apr 01 10:00:05 host-alpha sshd[124]: Failed password for root from 45.55.66.77 port 34211 ssh2
+Apr 01 10:00:05 host-alpha sshd[124]: Failed password for root from 45.55.66.77 port 34211 ssh2
+Apr 01 10:15:20 host-alpha sshd[555]: Accepted password for myuser from 192.168.1.10 port 60000 ssh2
+Apr 01 10:20:00 host-alpha sshd[666]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=99.88.77.66 user=testuser
+Apr 01 10:25:45 host-alpha sshd[777]: Failed password for support from 192.168.1.15 port 49152 ssh2
+Apr 01 10:30:12 host-alpha sshd[888]: authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.0.20 user=nagios
+Apr 01 10:35:00 host-alpha systemd: Some random system message that should be ignored
+Apr 01 10:40:55 host-alpha sshd[999]: Invalid user back door from 212.10.11.12 port 50505 ssh2

@@ -22,7 +22,7 @@ Clone the repository and set up a virtual environment:
 
 ```bash
 # Clone and enter repo
-git clone <your-repo-url>
+git clone https://github.com/harryc295/COM5413_Security_Portfolio
 cd COM5413_Security_Portfolio
 
 # Initialize Virtual Environment

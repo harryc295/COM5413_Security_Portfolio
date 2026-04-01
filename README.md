@@ -1,5 +1,7 @@
+markdown
+
 # COM5413 Security Portfolio: The Benji Protocol
-  Harry Corcoran (01/04/2026)
+**Operator:** Harry Corcoran (01/04/2026)
 
 ## Toolkit Components
 | Tool Name | Script | Purpose |
@@ -15,21 +17,34 @@
 * **No Manual Input:** All tools use `argparse` for automation; `input()` is prohibited
 
 ## Installation & Setup
+
+Clone the repository and set up a virtual environment:
+
+```bash
 # Clone and enter repo
 git clone <your-repo-url>
 cd COM5413_Security_Portfolio
 
 # Initialize Virtual Environment
 python3 -m venv .venv
-source .venv/bin/activate  # Linux
+source .venv/bin/activate  # Linux / macOS
 # .\.venv\Scripts\Activate.ps1 # PowerShell
 
-# Install Dependencies
+Install the required dependencies:
+
 pip install -r requirements.txt
 
-Field Examples
+requirements.txt contains:
+txt
 
+paramiko==3.4.0
+requests==2.31.0
+beautifulsoup4==4.12.3
+pytest==8.0.0
+
+Field Examples
 1. The Evidence Collector (log_parser.py)
+bash
 
 # Linux
 python3 toolkit/task1_evidence_collector/log_parser.py /var/log/auth.log --output suspects.csv
@@ -37,8 +52,8 @@ python3 toolkit/task1_evidence_collector/log_parser.py /var/log/auth.log --outpu
 # PowerShell
 python log_parser.py auth.log --output suspects.csv
 
-
 2. The Network Cartographer (scan.py)
+bash
 
 # Linux (Range scan)
 python3 toolkit/task2_network_cartographer/scan.py 192.168.1.10 --ports 1-1024
@@ -46,9 +61,8 @@ python3 toolkit/task2_network_cartographer/scan.py 192.168.1.10 --ports 1-1024
 # PowerShell (Specific ports)
 python scan.py 10.0.0.5 --ports 21,22,80,443
 
-
-
 3. The Access Validator (brute.py)
+bash
 
 # Linux (SSH)
 python3 toolkit/task3_access_validator/brute.py 192.168.1.15 --service ssh --user root --wordlist /usr/share/wordlists/rockyou.txt
@@ -56,9 +70,8 @@ python3 toolkit/task3_access_validator/brute.py 192.168.1.15 --service ssh --use
 # PowerShell (FTP)
 python brute.py 10.0.0.5 --service ftp --user admin --wordlist passwords.txt
 
-
-
 4. The Web Enumerator (web_enum.py)
+bash
 
 # Linux (Standard Scan)
 python3 toolkit/task4_web_enumerator/web_enum.py http://scanme.nmap.org --verbose
@@ -66,17 +79,15 @@ python3 toolkit/task4_web_enumerator/web_enum.py http://scanme.nmap.org --verbos
 # PowerShell (Advanced Scan)
 python web_enum.py http://10.10.10.5 --csv web_report.csv --paths "/config,/backup,/dev"
 
-
-
 Build Log & AI Audit
 
-    Build Log: docs/build.md – a notepad of all issues and challenge i had each week
+    Build Log: docs/build.md – a notepad of all issues and challenges I had each week.
 
-    AI Log: AI_LOG.md – logs of all ai that was used for debugging etc
+    AI Log: AI_LOG.md – logs of all AI that was used for debugging, etc.
 
 Git Tags
 
-there are tags at each milestone throughout this
+There are tags at each milestone throughout this repository:
 
     w1 – Week 1: Evidence Collector
 
@@ -86,6 +97,10 @@ there are tags at each milestone throughout this
 
     w4 – Week 4: Web Enumerator
 
-    Academic Integrity
+    hunt-final – Final submission after the Week 5 mission
 
-All work is my own. Where AI was used (e.g., for debugging) has been listed and wrote down allowed within the universitys ai policy and disability policy
+Academic Integrity
+
+All work is my own. Where AI was used (e.g., for debugging), it has been listed and documented within the university's AI policy and disability policy.
+
+

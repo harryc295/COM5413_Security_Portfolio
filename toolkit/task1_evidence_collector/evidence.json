@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "total": 6,
+    "top_ips": [
+      [
+        "192.168.1.15",
+        2
+      ],
+      [
+        "45.55.66.77",
+        1
+      ],
+      [
+        "99.88.77.66",
+        1
+      ],
+      [
+        "10.0.0.20",
+        1
+      ],
+      [
+        "212.10.11.12",
+        1
+      ]
+    ],
+    "top_users": [
+      [
+        "admin",
+        1
+      ],
+      [
+        "root",
+        1
+      ],
+      [
+        "testuser",
+        1
+      ],
+      [
+        "support",
+        1
+      ],
+      [
+        "nagios",
+        1
+      ]
+    ]
+  },
+  "data": [
+    {
+      "Timestamp": "Apr 01 10:00:01",
+      "IP_Address": "192.168.1.15",
+      "User_Account": "admin"
+    },
+    {
+      "Timestamp": "Apr 01 10:00:05",
+      "IP_Address": "45.55.66.77",
+      "User_Account": "root"
+    },
+    {
+      "Timestamp": "Apr 01 10:20:00",
+      "IP_Address": "99.88.77.66",
+      "User_Account": "testuser"
+    },
+    {
+      "Timestamp": "Apr 01 10:25:45",
+      "IP_Address": "192.168.1.15",
+      "User_Account": "support"
+    },
+    {
+      "Timestamp": "Apr 01 10:30:12",
+      "IP_Address": "10.0.0.20",
+      "User_Account": "nagios"
+    },
+    {
+      "Timestamp": "Apr 01 10:40:55",
+      "IP_Address": "212.10.11.12",
+      "User_Account": "back"
+    }
+  ]
+}

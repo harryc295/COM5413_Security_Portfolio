@@ -155,7 +155,7 @@ def main():
         myscanner.run(port_list)
         myscanner.save_json(args.output)
     except KeyboardInterrupt:
-        print("\n[!] User stopped the scan (Ctrl+C). Exiting...")
+        print("\n stopping scan (ctrl+c). ending program...")
         sys.exit(1)
 
 

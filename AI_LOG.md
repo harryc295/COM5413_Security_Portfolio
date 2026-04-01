@@ -5,5 +5,6 @@
  Ai was used for json alligment and helping add  keyboard interrupt to stop crashes
  
  Task 3
-
+ Ai was used for figuring out the keyboard interupt to avoid terminal spam and help with 0.1s delay 
+ 
  Task 4

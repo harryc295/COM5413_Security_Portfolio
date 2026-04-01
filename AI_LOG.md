@@ -9,3 +9,9 @@
  
  Task 4
  Ai was used for fixing pull_comments so it would work for the auto-grader 
+
+ Read me 
+ Ai was used for a template for the readme 
+
+ build.md 
+ ai was used to help me formulate my errors to write them in a formatted way

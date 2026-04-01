@@ -116,12 +116,12 @@ class Bruteforcer:
             # delay between attempts
             time.sleep(self.wait)
 
-        self.logger.info("bruteforce attempt finished no password in wordlist found.")
+        self.logger.info("bruteforce attempt finished no hits.")
         return None
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description="Bruteforcer for SSH/FTP")
+    parser = argparse.ArgumentParser(description="bruteforcer for SSH and FTP")
     parser.add_argument("host", help="target IP or host")
     parser.add_argument("--service", "-s", required=True, choices=['ssh', 'ftp'], help="Service type")
     parser.add_argument("--user", "-u", required=True, help="target username")

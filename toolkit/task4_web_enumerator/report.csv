@@ -1,0 +1,10 @@
+type,item,status,info
+HEAD,Server,Apache/2.4.7 (Ubuntu),
+COMM,N/A,Google Analytics Code,
+COMM,N/A,END Google Analytics Code,
+COMM,N/A,content,
+COMM,N/A,wrapper,
+PATH,/robots.txt,404,Not Found
+PATH,/admin,404,Not Found
+PATH,/phpmyadmin,404,Not Found
+PATH,/.git,404,Not Found

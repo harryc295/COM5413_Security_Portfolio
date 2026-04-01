@@ -28,7 +28,7 @@ source .venv/bin/activate  # Linux
 pip install -r requirements.txt
 
 Field Examples
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 1. The Evidence Collector (log_parser.py)
 
 # Linux
@@ -36,7 +36,8 @@ python3 toolkit/task1_evidence_collector/log_parser.py /var/log/auth.log --outpu
 
 # PowerShell
 python log_parser.py auth.log --output suspects.csv
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 2. The Network Cartographer (scan.py)
 
 # Linux (Range scan)
@@ -44,7 +45,9 @@ python3 toolkit/task2_network_cartographer/scan.py 192.168.1.10 --ports 1-1024
 
 # PowerShell (Specific ports)
 python scan.py 10.0.0.5 --ports 21,22,80,443
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 3. The Access Validator (brute.py)
 
 # Linux (SSH)
@@ -52,7 +55,9 @@ python3 toolkit/task3_access_validator/brute.py 192.168.1.15 --service ssh --use
 
 # PowerShell (FTP)
 python brute.py 10.0.0.5 --service ftp --user admin --wordlist passwords.txt
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 4. The Web Enumerator (web_enum.py)
 
 # Linux (Standard Scan)
@@ -60,7 +65,9 @@ python3 toolkit/task4_web_enumerator/web_enum.py http://scanme.nmap.org --verbos
 
 # PowerShell (Advanced Scan)
 python web_enum.py http://10.10.10.5 --csv web_report.csv --paths "/config,/backup,/dev"
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 Build Log & AI Audit
 
     Build Log: docs/build.md – a notepad of all issues and challenge i had each week

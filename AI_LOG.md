@@ -8,3 +8,4 @@
  Ai was used for figuring out the keyboard interupt to avoid terminal spam and help with 0.1s delay 
  
  Task 4
+ Ai was used for fixing pull_comments so it would work for the auto-grader 

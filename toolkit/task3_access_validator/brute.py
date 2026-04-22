@@ -105,10 +105,10 @@ class Bruteforcer:
         self.logger.info(f"running {self.service} attack on {self.host}:{self.port} (user: {self.username})")
 
         for count, p in enumerate(wordlist, 1):
-            self.logger.info(f"[{count}/{len(wordlist)}] testing ports: {p}")
+            # CHANGED: 'testing ports:' to 'testing password:' to match test output expectations
+            self.logger.info(f"[{count}/{len(wordlist)}] testing password: {p}")
 
             if self.do_check(p):
-                # exact message needed
                 self.logger.info(f"[+] SUCCESS: Password found: {p}")
                 self.found_pw = p
                 return p
@@ -116,7 +116,8 @@ class Bruteforcer:
             # delay between attempts
             time.sleep(self.wait)
 
-        self.logger.info("bruteforce attempt finished no hits.")
+        # CHANGED: Exact exhaustion message required by the field test
+        self.logger.info(f"[-] EXHAUSTED: No valid credentials found for user {self.username}")
         return None
 
 

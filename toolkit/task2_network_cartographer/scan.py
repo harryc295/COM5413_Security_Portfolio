@@ -28,7 +28,8 @@ class Scanner:
         level = logging.DEBUG if self.verbose else logging.INFO
         logger.setLevel(level)
 
-        h = logging.StreamHandler(sys.stdout)
+        # CHANGED: Use sys.stderr so logs don't interfere with JSON output
+        h = logging.StreamHandler(sys.stderr)
         h.setLevel(level)
 
         fmt = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s',
@@ -106,7 +107,8 @@ class Scanner:
             "open_ports": self.open_ports
         }
 
-        print(json.dumps(results, indent=2))
+        # CHANGED: Print ONLY the JSON string to stdout
+        print(json.dumps(results))
 
         try:
             with open(filepath, 'w') as f:

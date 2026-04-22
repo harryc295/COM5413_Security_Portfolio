@@ -1,0 +1,21 @@
+22/04/26 20:34:10 - running ftp attack on 127.0.0.1:13079 (user: testuser)
+22/04/26 20:34:10 - [1/4] testing password: wrongpass1
+22/04/26 20:34:13 - [2/4] testing password: wrongpass2
+22/04/26 20:34:16 - [3/4] testing password: s3cur3p@ss
+22/04/26 20:34:16 - [+] SUCCESS: Password found: s3cur3p@ss
+22/04/26 20:34:17 - running ftp attack on 127.0.0.1:13086 (user: testuser)
+22/04/26 20:34:17 - [1/3] testing password: bad1
+22/04/26 20:34:20 - [2/3] testing password: bad2
+22/04/26 20:34:23 - [3/3] testing password: bad3
+22/04/26 20:34:26 - [-] EXHAUSTED: No valid credentials found for user testuser
+22/04/26 20:34:27 - running ftp attack on 127.0.0.1:13096 (user: testuser)
+22/04/26 20:34:27 - [1/4] testing password: wrongpass1
+22/04/26 20:34:30 - [2/4] testing password: wrongpass2
+22/04/26 20:34:33 - [3/4] testing password: s3cur3p@ss
+22/04/26 20:34:33 - [+] SUCCESS: Password found: s3cur3p@ss
+22/04/26 20:34:33 - running ftp attack on 127.0.0.1:13104 (user: testuser)
+22/04/26 20:34:33 - [1/3] testing password: wrong1
+22/04/26 20:34:36 - [2/3] testing password: psswort
+22/04/26 20:34:39 - [3/3] testing password: s3cur3p@ss
+22/04/26 20:34:39 - [+] SUCCESS: Password found: s3cur3p@ss
+22/04/26 20:34:40 - wordlist error: [Errno 2] No such file or directory: '/tmp/this_wordlist_does_not_exist_com5413.txt'

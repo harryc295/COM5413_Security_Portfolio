@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup, Comment
 
 
 class webscanner:
-    # areas to probe
-    dirs = ["/robots.txt", "/admin", "/phpmyadmin", "/.git"]
+    # areas to probe - CHANGED: Added "/login" to meet test requirements
+    dirs = ["/robots.txt", "/admin", "/phpmyadmin", "/login", "/.git"]
 
     def __init__(self, url, t=10.0, v=False, file_path=None):
         self.url = url.rstrip('/')
@@ -28,7 +28,8 @@ class webscanner:
         logger = logging.getLogger(__name__)
         lvl = logging.DEBUG if self.v else logging.INFO
         logger.setLevel(lvl)
-        h = logging.StreamHandler(sys.stdout)
+        # CHANGED: Moved to sys.stderr to keep stdout clean for the test assertions
+        h = logging.StreamHandler(sys.stderr)
         h.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%d/%m/%y %H:%M:%S'))
         logger.addHandler(h)
         return logger

@@ -15,3 +15,6 @@
 
  build.md 
  ai was used to help me formulate my errors to write them in a formatted way
+
+AI was also used to finally adjust it to pass the field tests pointing out what was needed to be changed etc
+

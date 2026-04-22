@@ -56,7 +56,7 @@ python log_parser.py auth.log --output suspects.csv
 bash
 
 # Linux (Range scan)
-python3 toolkit/task2_network_cartographer/scan.py 192.168.1.10 --ports 1-1024
+python3 toolkit/task2_network_scanner/scan.py 192.168.1.10 --ports 1-1024
 
 # PowerShell (Specific ports)
 python scan.py 10.0.0.5 --ports 21,22,80,443
@@ -77,7 +77,7 @@ bash
 python3 toolkit/task4_web_enumerator/web_enum.py http://scanme.nmap.org --verbose
 
 # PowerShell (Advanced Scan)
-python web_enum.py http://10.10.10.5 --csv web_report.csv --paths "/config,/backup,/dev"
+python web_enum.py http://10.10.10.5 --csv web_report.csv --paths "/config,/backup,/dev,/login
 
 Build Log & AI Audit
 

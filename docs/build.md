@@ -59,3 +59,17 @@
     ##how i fixed it
 
     used `soup.find_all(string=lambda s: isinstance(s, Comment))` to get real html comments
+
+    ## Mission – Operation Nightfall (Week 5)
+
+**2026-04-24**
+
+- Ran scan.py → found ports 22,80,3306,6697
+- Ran web_enum.py → found username s.lane
+- Brute forced SSH with wordlist → password fluffybunny
+- Found .field_brief → MySQL credentials
+- Queried MySQL → root password Th3Synd1c4te!
+- Read /var/log/evidence.log as root → extracted flag
+- Wrote exploit.py to automate the chain
+- Wrote fix.py to remove evidence, change password, redact MySQL
+- Verified fix – all actions successful

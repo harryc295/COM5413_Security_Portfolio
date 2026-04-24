@@ -18,3 +18,4 @@
 
 AI was also used to finally adjust it to pass the field tests pointing out what was needed to be changed + updating requirements.txt
 
+Ai was used with help to fix parts of my code that were broken 
